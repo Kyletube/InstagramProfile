@@ -14,6 +14,7 @@
 		272D30302AB0745200A4D274 /* InstagramProfile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 272D302E2AB0745200A4D274 /* InstagramProfile.xcdatamodeld */; };
 		272D30322AB0745400A4D274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272D30312AB0745400A4D274 /* Assets.xcassets */; };
 		272D30352AB0745400A4D274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272D30332AB0745400A4D274 /* LaunchScreen.storyboard */; };
+		278F79BE2AB1F7C600C8EE0B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 278F79BD2AB1F7C600C8EE0B /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				278F79BE2AB1F7C600C8EE0B /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,6 +88,9 @@
 			dependencies = (
 			);
 			name = InstagramProfile;
+			packageProductDependencies = (
+				278F79BD2AB1F7C600C8EE0B /* SnapKit */,
+			);
 			productName = InstagramProfile;
 			productReference = 272D30222AB0745200A4D274 /* InstagramProfile.app */;
 			productType = "com.apple.product-type.application";
@@ -114,6 +119,9 @@
 				Base,
 			);
 			mainGroup = 272D30192AB0745200A4D274;
+			packageReferences = (
+				278F79BC2AB1F7C600C8EE0B /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 272D30232AB0745200A4D274 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -360,6 +368,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		278F79BC2AB1F7C600C8EE0B /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		278F79BD2AB1F7C600C8EE0B /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 278F79BC2AB1F7C600C8EE0B /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		272D302E2AB0745200A4D274 /* InstagramProfile.xcdatamodeld */ = {
