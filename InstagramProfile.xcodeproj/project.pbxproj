@@ -9,24 +9,22 @@
 /* Begin PBXBuildFile section */
 		272D30262AB0745200A4D274 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D30252AB0745200A4D274 /* AppDelegate.swift */; };
 		272D30282AB0745200A4D274 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D30272AB0745200A4D274 /* SceneDelegate.swift */; };
-		272D302A2AB0745200A4D274 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 272D30292AB0745200A4D274 /* ViewController.swift */; };
-		272D302D2AB0745200A4D274 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272D302B2AB0745200A4D274 /* Main.storyboard */; };
 		272D30302AB0745200A4D274 /* InstagramProfile.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 272D302E2AB0745200A4D274 /* InstagramProfile.xcdatamodeld */; };
 		272D30322AB0745400A4D274 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 272D30312AB0745400A4D274 /* Assets.xcassets */; };
 		272D30352AB0745400A4D274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272D30332AB0745400A4D274 /* LaunchScreen.storyboard */; };
 		278F79BE2AB1F7C600C8EE0B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 278F79BD2AB1F7C600C8EE0B /* SnapKit */; };
+		27B35F642AB3D95A00CD4347 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B35F632AB3D95A00CD4347 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		272D30222AB0745200A4D274 /* InstagramProfile.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstagramProfile.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		272D30252AB0745200A4D274 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		272D30272AB0745200A4D274 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		272D30292AB0745200A4D274 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		272D302C2AB0745200A4D274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		272D302F2AB0745200A4D274 /* InstagramProfile.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = InstagramProfile.xcdatamodel; sourceTree = "<group>"; };
 		272D30312AB0745400A4D274 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		272D30342AB0745400A4D274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		272D30362AB0745400A4D274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		27B35F632AB3D95A00CD4347 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,8 +60,7 @@
 			children = (
 				272D30252AB0745200A4D274 /* AppDelegate.swift */,
 				272D30272AB0745200A4D274 /* SceneDelegate.swift */,
-				272D30292AB0745200A4D274 /* ViewController.swift */,
-				272D302B2AB0745200A4D274 /* Main.storyboard */,
+				27B35F632AB3D95A00CD4347 /* MainViewController.swift */,
 				272D30312AB0745400A4D274 /* Assets.xcassets */,
 				272D30332AB0745400A4D274 /* LaunchScreen.storyboard */,
 				272D30362AB0745400A4D274 /* Info.plist */,
@@ -138,7 +135,6 @@
 			files = (
 				272D30352AB0745400A4D274 /* LaunchScreen.storyboard in Resources */,
 				272D30322AB0745400A4D274 /* Assets.xcassets in Resources */,
-				272D302D2AB0745200A4D274 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -150,23 +146,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				272D30302AB0745200A4D274 /* InstagramProfile.xcdatamodeld in Sources */,
-				272D302A2AB0745200A4D274 /* ViewController.swift in Sources */,
 				272D30262AB0745200A4D274 /* AppDelegate.swift in Sources */,
 				272D30282AB0745200A4D274 /* SceneDelegate.swift in Sources */,
+				27B35F642AB3D95A00CD4347 /* MainViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		272D302B2AB0745200A4D274 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				272D302C2AB0745200A4D274 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		272D30332AB0745400A4D274 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -303,7 +291,6 @@
 				INFOPLIST_FILE = InstagramProfile/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -330,7 +317,6 @@
 				INFOPLIST_FILE = InstagramProfile/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
