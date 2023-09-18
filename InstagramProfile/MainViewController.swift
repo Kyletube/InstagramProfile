@@ -6,9 +6,17 @@
 //
 
 import UIKit
+import SwiftUI
+
 
 class MainViewController: UIViewController {
 
+    struct VCPreView:PreviewProvider {
+        static var previews: some View {
+            MainViewController().toPreview()
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
