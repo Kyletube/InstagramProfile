@@ -16,7 +16,7 @@ class ProfileViewController: UIViewController {
     }(UIImageView())
     
     let postCountLabel: UILabel = {
-        $0.text = "0"
+        $0.text = "7"
         $0.font = .boldSystemFont(ofSize: 16.5)
         return $0
     }(UILabel())
@@ -141,6 +141,42 @@ class ProfileViewController: UIViewController {
         return $0
     }(UIStackView())
     
+    let separator: UIView = {
+        $0.backgroundColor = .lightGray
+        return $0
+    }(UIView())
+    
+    let gridImageView: UIImageView = {
+        $0.image = UIImage(named: "Grid")
+        $0.contentMode = .scaleAspectFit
+        return $0
+    }(UIImageView())
+    
+    let tripleSectionStackView: UIStackView = {
+        $0.axis = .horizontal
+        $0.distribution = .fillEqually
+        return $0
+    }(UIStackView())
+    
+    let gridImageContainer: UIView = UIView()
+    
+    let bottomView: UIView = {
+        $0.backgroundColor = .clear
+        return $0
+    }(UIView())
+    
+    let gridImageSeparator: UIView = {
+        $0.backgroundColor = .black
+        return $0
+    }(UIView())
+    
+    let personIconImageView: UIImageView = {
+        $0.image = UIImage(systemName: "person.fill")
+        $0.tintColor = .black
+        $0.contentMode = .scaleAspectFit
+        return $0
+    }(UIImageView())
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -156,7 +192,13 @@ class ProfileViewController: UIViewController {
         view.addSubview(countInfoStackView)
         view.addSubview(userInfoStackView)
         view.addSubview(middleBarStackView)
-        
+        view.addSubview(separator)
+        view.addSubview(tripleSectionStackView)
+        gridImageContainer.addSubview(gridImageView)
+        gridImageContainer.addSubview(gridImageSeparator)
+        view.addSubview(bottomView)
+        bottomView.addSubview(personIconImageView)
+
         postStackView.addArrangedSubview(postCountLabel)
         postStackView.addArrangedSubview(postLabel)
         
@@ -177,6 +219,10 @@ class ProfileViewController: UIViewController {
         middleBarStackView.addArrangedSubview(followButton)
         middleBarStackView.addArrangedSubview(messageButton)
         middleBarStackView.addArrangedSubview(moreButton)
+        
+        tripleSectionStackView.addArrangedSubview(gridImageContainer)
+        tripleSectionStackView.addArrangedSubview(UIView())
+        tripleSectionStackView.addArrangedSubview(UIView())
         
         profileImage.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(14)
@@ -223,6 +269,41 @@ class ProfileViewController: UIViewController {
         followButton.snp.makeConstraints { make in
             make.height.equalTo(moreButton.snp.height)
             make.width.equalTo(messageButton.snp.width)
+        }
+        
+        separator.snp.makeConstraints { make in
+            make.height.equalTo(1)
+            make.top.equalTo(middleBarStackView.snp.bottom).offset(15)
+            make.left.right.equalToSuperview()
+        }
+        
+        tripleSectionStackView.snp.makeConstraints { make in
+            make.top.equalTo(separator.snp.bottom).offset(0)
+            make.left.right.equalToSuperview()
+            make.height.equalTo(40)
+        }
+        
+        gridImageView.snp.makeConstraints { make in
+            make.width.equalTo(22.5)
+            make.height.equalTo(22.5)
+            make.center.equalTo(gridImageContainer)
+        }
+        
+        gridImageSeparator.snp.makeConstraints { make in
+            make.height.equalTo(1)
+            make.left.right.equalTo(gridImageContainer)
+            make.bottom.equalTo(gridImageContainer)
+        }
+        
+        bottomView.snp.makeConstraints { make in
+            make.left.right.equalToSuperview()
+            make.height.equalTo(40)
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        }
+        
+        personIconImageView.snp.makeConstraints { make in
+            make.center.equalTo(bottomView)
+            make.width.height.equalTo(22.5)
         }
     }
     
