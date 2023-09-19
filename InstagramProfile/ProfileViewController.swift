@@ -6,16 +6,8 @@
 //
 
 import UIKit
-import SwiftUI
 
 class ProfileViewController: UIViewController {
-
-    
-    struct VCPreView: PreviewProvider {
-        static var previews: some View {
-            ProfileViewController().toPreview()
-        }
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

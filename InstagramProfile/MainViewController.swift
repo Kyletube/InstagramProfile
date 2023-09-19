@@ -22,12 +22,6 @@ class MainViewController: UIViewController {
         return $0
     }(UIButton(type: .custom))
     
-    struct VCPreView: PreviewProvider {
-        static var previews: some View {
-            MainViewController().toPreview()
-        }
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
