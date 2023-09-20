@@ -10,6 +10,8 @@ import SnapKit
 
 class ProfileViewController: UIViewController {
     
+    let assetImageArray: [String] = ["1", "2", "3", "4", "5", "6", "7"]
+
     let profileImage: UIImageView = {
         $0.image = UIImage(named: "르탄이")
         return $0
@@ -343,13 +345,19 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        12
+        return assetImageArray.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
         
-        cell.backgroundColor = UIColor.lightGray
+        let imageView = UIImageView(frame: cell.contentView.bounds)
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.image = UIImage(named: assetImageArray[indexPath.item])
+        
+        cell.contentView.addSubview(imageView)
+        
         return cell
     }
     
