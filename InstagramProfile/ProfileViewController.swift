@@ -108,8 +108,6 @@ class ProfileViewController: UIViewController {
         $0.titleLabel?.font = UIFont.boldSystemFont(ofSize: 14)
         $0.clipsToBounds = true
         $0.layer.cornerRadius = 4
-//        $0.layer.borderWidth = 1.5
-//        $0.layer.borderColor = UIColor.lightGray.cgColor
         $0.backgroundColor = .systemBlue
         return $0
     }(UIButton())
@@ -155,6 +153,7 @@ class ProfileViewController: UIViewController {
     let tripleSectionStackView: UIStackView = {
         $0.axis = .horizontal
         $0.distribution = .fillEqually
+        $0.spacing = 2
         return $0
     }(UIStackView())
     
@@ -177,6 +176,16 @@ class ProfileViewController: UIViewController {
         return $0
     }(UIImageView())
     
+    let collectionView: UICollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 2
+        layout.minimumInteritemSpacing = 2
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.backgroundColor = .clear
+        collectionView.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "Cell")
+        return collectionView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -188,6 +197,9 @@ class ProfileViewController: UIViewController {
         view.backgroundColor = .white
         self.title = "nabaecamp"
         
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
         view.addSubview(profileImage)
         view.addSubview(countInfoStackView)
         view.addSubview(userInfoStackView)
@@ -198,6 +210,8 @@ class ProfileViewController: UIViewController {
         gridImageContainer.addSubview(gridImageSeparator)
         view.addSubview(bottomView)
         bottomView.addSubview(personIconImageView)
+        view.addSubview(collectionView)
+
 
         postStackView.addArrangedSubview(postCountLabel)
         postStackView.addArrangedSubview(postLabel)
@@ -305,6 +319,12 @@ class ProfileViewController: UIViewController {
             make.center.equalTo(bottomView)
             make.width.height.equalTo(22.5)
         }
+        
+        collectionView.snp.makeConstraints { make in
+            make.top.equalTo(tripleSectionStackView.snp.bottom).offset(2)
+            make.left.right.equalToSuperview()
+            make.bottom.equalTo(bottomView.snp.top).offset(2)
+        }
     }
     
     func addNavOptionButton() {
@@ -318,5 +338,28 @@ class ProfileViewController: UIViewController {
     @objc func optionButtonTapped() {
         // 옵션 버튼이 탭되었을 때의 동작을 여기에 구현
         print("햄버거 눌림")
+    }
+}
+
+extension ProfileViewController: UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        12
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath)
+        
+        cell.backgroundColor = UIColor.lightGray
+        return cell
+    }
+    
+    
+}
+
+extension ProfileViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let cellWidth = (collectionView.frame.size.width - 4) / 3
+        return CGSize(width: cellWidth, height: cellWidth)
     }
 }
