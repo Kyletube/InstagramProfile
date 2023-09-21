@@ -14,6 +14,10 @@
 		272D30352AB0745400A4D274 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 272D30332AB0745400A4D274 /* LaunchScreen.storyboard */; };
 		273D900C2AB8743E00DA0A1C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273D900B2AB8743E00DA0A1C /* ProfileViewController.swift */; };
 		278F79BE2AB1F7C600C8EE0B /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 278F79BD2AB1F7C600C8EE0B /* SnapKit */; };
+		2792772B2ABC15590010C2D4 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2792772A2ABC15590010C2D4 /* EditProfileViewController.swift */; };
+		279277402ABCA6620010C2D4 /* UserModel+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2792773E2ABCA6620010C2D4 /* UserModel+CoreDataClass.swift */; };
+		279277412ABCA6620010C2D4 /* UserModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2792773F2ABCA6620010C2D4 /* UserModel+CoreDataProperties.swift */; };
+		279277432ABCA82D0010C2D4 /* EditProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279277422ABCA82D0010C2D4 /* EditProfileViewModel.swift */; };
 		27B35F642AB3D95A00CD4347 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B35F632AB3D95A00CD4347 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +30,10 @@
 		272D30342AB0745400A4D274 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		272D30362AB0745400A4D274 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		273D900B2AB8743E00DA0A1C /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		2792772A2ABC15590010C2D4 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
+		2792773E2ABCA6620010C2D4 /* UserModel+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserModel+CoreDataClass.swift"; sourceTree = "<group>"; };
+		2792773F2ABCA6620010C2D4 /* UserModel+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		279277422ABCA82D0010C2D4 /* EditProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewModel.swift; sourceTree = "<group>"; };
 		27B35F632AB3D95A00CD4347 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,14 +70,42 @@
 			children = (
 				272D30252AB0745200A4D274 /* AppDelegate.swift */,
 				272D30272AB0745200A4D274 /* SceneDelegate.swift */,
-				27B35F632AB3D95A00CD4347 /* MainViewController.swift */,
-				273D900B2AB8743E00DA0A1C /* ProfileViewController.swift */,
+				279277272ABC114E0010C2D4 /* Model */,
+				279277292ABC116B0010C2D4 /* ViewModel */,
+				279277282ABC11560010C2D4 /* Views */,
 				272D30312AB0745400A4D274 /* Assets.xcassets */,
 				272D30332AB0745400A4D274 /* LaunchScreen.storyboard */,
 				272D30362AB0745400A4D274 /* Info.plist */,
 				272D302E2AB0745200A4D274 /* InstagramProfile.xcdatamodeld */,
 			);
 			path = InstagramProfile;
+			sourceTree = "<group>";
+		};
+		279277272ABC114E0010C2D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				2792773E2ABCA6620010C2D4 /* UserModel+CoreDataClass.swift */,
+				2792773F2ABCA6620010C2D4 /* UserModel+CoreDataProperties.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		279277282ABC11560010C2D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				27B35F632AB3D95A00CD4347 /* MainViewController.swift */,
+				273D900B2AB8743E00DA0A1C /* ProfileViewController.swift */,
+				2792772A2ABC15590010C2D4 /* EditProfileViewController.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		279277292ABC116B0010C2D4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				279277422ABCA82D0010C2D4 /* EditProfileViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -148,9 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				279277412ABCA6620010C2D4 /* UserModel+CoreDataProperties.swift in Sources */,
 				273D900C2AB8743E00DA0A1C /* ProfileViewController.swift in Sources */,
 				272D30302AB0745200A4D274 /* InstagramProfile.xcdatamodeld in Sources */,
+				2792772B2ABC15590010C2D4 /* EditProfileViewController.swift in Sources */,
 				272D30262AB0745200A4D274 /* AppDelegate.swift in Sources */,
+				279277402ABCA6620010C2D4 /* UserModel+CoreDataClass.swift in Sources */,
+				279277432ABCA82D0010C2D4 /* EditProfileViewModel.swift in Sources */,
 				272D30282AB0745200A4D274 /* SceneDelegate.swift in Sources */,
 				27B35F642AB3D95A00CD4347 /* MainViewController.swift in Sources */,
 			);

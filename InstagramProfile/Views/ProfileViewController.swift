@@ -272,113 +272,113 @@ class ProfileViewController: UIViewController {
     
     func setConstraints() {
         
-        userNameLabel.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
-            make.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
+        userNameLabel.snp.makeConstraints {
+            $0.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
+            $0.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
         }
         
-        optionButton.snp.makeConstraints { make in
-            make.centerY.equalTo(userNameLabel.snp.centerY)
-            make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-16)
+        optionButton.snp.makeConstraints {
+            $0.centerY.equalTo(userNameLabel.snp.centerY)
+            $0.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-16)
         }
         
-        backButton.snp.makeConstraints { make in
-            make.centerY.equalTo(userNameLabel.snp.centerY)
-            make.left.equalTo(view.safeAreaLayoutGuide.snp.left).offset(16)
+        backButton.snp.makeConstraints {
+            $0.centerY.equalTo(userNameLabel.snp.centerY)
+            $0.left.equalTo(view.safeAreaLayoutGuide.snp.left).offset(16)
         }
         
-        profileImage.snp.makeConstraints { make in
-            make.top.equalTo(userNameLabel.snp.bottom).offset(14)
-            make.left.equalToSuperview().offset(14)
-            make.width.equalTo(88)
-            make.height.equalTo(88)
+        profileImage.snp.makeConstraints {
+            $0.top.equalTo(userNameLabel.snp.bottom).offset(14)
+            $0.left.equalToSuperview().offset(14)
+            $0.width.equalTo(88)
+            $0.height.equalTo(88)
         }
         
-        countInfoStackView.snp.makeConstraints { make in
-            make.centerY.equalTo(profileImage.snp.centerY)
-            make.left.equalTo(profileImage.snp.right).offset(28)
-            make.right.equalToSuperview().offset(-28)
+        countInfoStackView.snp.makeConstraints {
+            $0.centerY.equalTo(profileImage.snp.centerY)
+            $0.left.equalTo(profileImage.snp.right).offset(28)
+            $0.right.equalToSuperview().offset(-28)
         }
         
-        userInfoStackView.snp.makeConstraints { make in
-            make.top.equalTo(profileImage.snp.bottom).offset(14)
-            make.left.equalTo(view.safeAreaLayoutGuide.snp.left).offset(15)
-            make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(28)
+        userInfoStackView.snp.makeConstraints {
+            $0.top.equalTo(profileImage.snp.bottom).offset(14)
+            $0.left.equalTo(view.safeAreaLayoutGuide.snp.left).offset(15)
+            $0.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(28)
         }
         
-        userInfo.snp.makeConstraints { make in
-            make.height.equalTo(19)
+        userInfo.snp.makeConstraints {
+            $0.height.equalTo(19)
         }
         
-        userInfo2.snp.makeConstraints { make in
-            make.height.equalTo(19)
+        userInfo2.snp.makeConstraints {
+            $0.height.equalTo(19)
         }
         
-        userInfo3.snp.makeConstraints { make in
-            make.height.equalTo(19)
+        userInfo3.snp.makeConstraints {
+            $0.height.equalTo(19)
         }
         
-        middleBarStackView.snp.makeConstraints { make in
-            make.left.equalTo(view.safeAreaLayoutGuide.snp.left).offset(15)
-            make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-15)
-            make.top.equalTo(userInfoStackView.snp.bottom).offset(15)
+        middleBarStackView.snp.makeConstraints {
+            $0.left.equalTo(view.safeAreaLayoutGuide.snp.left).offset(15)
+            $0.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-15)
+            $0.top.equalTo(userInfoStackView.snp.bottom).offset(15)
         }
         
-        moreButton.snp.makeConstraints { make in
-            make.width.equalTo(30)
-            make.height.equalTo(30)
+        moreButton.snp.makeConstraints {
+            $0.width.equalTo(30)
+            $0.height.equalTo(30)
         }
         
-        followButton.snp.makeConstraints { make in
-            make.height.equalTo(moreButton.snp.height)
-            make.width.equalTo(messageButton.snp.width)
+        followButton.snp.makeConstraints {
+            $0.height.equalTo(moreButton.snp.height)
+            $0.width.equalTo(messageButton.snp.width)
         }
         
-        separator.snp.makeConstraints { make in
-            make.height.equalTo(1)
-            make.top.equalTo(middleBarStackView.snp.bottom).offset(15)
-            make.left.right.equalToSuperview()
+        separator.snp.makeConstraints {
+            $0.height.equalTo(1)
+            $0.top.equalTo(middleBarStackView.snp.bottom).offset(15)
+            $0.left.right.equalToSuperview()
         }
         
-        tripleSectionStackView.snp.makeConstraints { make in
-            make.top.equalTo(separator.snp.bottom).offset(0)
-            make.left.right.equalToSuperview()
-            make.height.equalTo(40)
+        tripleSectionStackView.snp.makeConstraints {
+            $0.top.equalTo(separator.snp.bottom).offset(0)
+            $0.left.right.equalToSuperview()
+            $0.height.equalTo(40)
         }
         
-        gridImageView.snp.makeConstraints { make in
-            make.width.equalTo(22.5)
-            make.height.equalTo(22.5)
-            make.center.equalTo(gridImageContainer)
+        gridImageView.snp.makeConstraints {
+            $0.width.equalTo(22.5)
+            $0.height.equalTo(22.5)
+            $0.center.equalTo(gridImageContainer)
         }
         
-        gridImageSeparator.snp.makeConstraints { make in
-            make.height.equalTo(1)
-            make.left.right.equalTo(gridImageContainer)
-            make.bottom.equalTo(gridImageContainer)
+        gridImageSeparator.snp.makeConstraints {
+            $0.height.equalTo(1)
+            $0.left.right.equalTo(gridImageContainer)
+            $0.bottom.equalTo(gridImageContainer)
         }
         
-        separator2.snp.makeConstraints { make in
-            make.height.equalTo(1)
-            make.bottom.equalTo(bottomView.snp.top).offset(0)
-            make.left.right.equalToSuperview()
+        separator2.snp.makeConstraints {
+            $0.height.equalTo(1)
+            $0.bottom.equalTo(bottomView.snp.top).offset(0)
+            $0.left.right.equalToSuperview()
         }
         
-        bottomView.snp.makeConstraints { make in
-            make.left.right.equalToSuperview()
-            make.height.equalTo(85)
-            make.bottom.equalToSuperview()
+        bottomView.snp.makeConstraints {
+            $0.left.right.equalToSuperview()
+            $0.height.equalTo(85)
+            $0.bottom.equalToSuperview()
         }
         
-        personIconImageView.snp.makeConstraints { make in
-            make.center.equalTo(bottomView)
-            make.width.height.equalTo(22.5)
+        personIconImageView.snp.makeConstraints {
+            $0.center.equalTo(bottomView)
+            $0.width.height.equalTo(22.5)
         }
         
-        collectionView.snp.makeConstraints { make in
-            make.top.equalTo(tripleSectionStackView.snp.bottom).offset(2)
-            make.left.right.equalToSuperview()
-            make.bottom.equalTo(bottomView.snp.top).offset(2)
+        collectionView.snp.makeConstraints {
+            $0.top.equalTo(tripleSectionStackView.snp.bottom).offset(2)
+            $0.left.right.equalToSuperview()
+            $0.bottom.equalTo(bottomView.snp.top).offset(2)
         }
     }
     
@@ -393,8 +393,20 @@ class ProfileViewController: UIViewController {
     }
     
     @objc func optionButtonTapped() {
-        // 옵션 버튼이 탭되었을 때의 동작을 여기에 구현
-        print("햄버거 눌림")
+        let alertController = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        
+        let viewProfileAction = UIAlertAction(title: "프로필 수정", style: .default) { [weak self] _ in
+            let editVC = EditProfileViewController()
+            
+            self?.present(editVC, animated: true)
+        }
+        
+        let cancelAction = UIAlertAction(title: "취소", style: .cancel, handler: nil)
+        
+        alertController.addAction(viewProfileAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
 }
 
