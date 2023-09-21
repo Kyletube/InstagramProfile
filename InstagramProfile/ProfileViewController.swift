@@ -11,7 +11,7 @@ import SnapKit
 class ProfileViewController: UIViewController {
     
     let assetImageArray: [String] = ["1", "2", "3", "4", "5", "6", "7"]
-
+    
     let userNameLabel: UILabel = {
         $0.text = "nabaecamp"
         $0.font = .boldSystemFont(ofSize: 18)
@@ -181,8 +181,13 @@ class ProfileViewController: UIViewController {
     
     let gridImageContainer: UIView = UIView()
     
+    let separator2: UIView = {
+        $0.backgroundColor = .lightGray
+        return $0
+    }(UIView())
+    
     let bottomView: UIView = {
-        $0.backgroundColor = .clear
+        $0.backgroundColor = .systemGray6
         return $0
     }(UIView())
     
@@ -234,11 +239,11 @@ class ProfileViewController: UIViewController {
         view.addSubview(tripleSectionStackView)
         gridImageContainer.addSubview(gridImageView)
         gridImageContainer.addSubview(gridImageSeparator)
+        view.addSubview(separator2)
         view.addSubview(bottomView)
         bottomView.addSubview(personIconImageView)
         view.addSubview(collectionView)
-
-
+        
         postStackView.addArrangedSubview(postCountLabel)
         postStackView.addArrangedSubview(postLabel)
         
@@ -353,10 +358,16 @@ class ProfileViewController: UIViewController {
             make.bottom.equalTo(gridImageContainer)
         }
         
+        separator2.snp.makeConstraints { make in
+            make.height.equalTo(1)
+            make.bottom.equalTo(bottomView.snp.top).offset(0)
+            make.left.right.equalToSuperview()
+        }
+        
         bottomView.snp.makeConstraints { make in
             make.left.right.equalToSuperview()
-            make.height.equalTo(40)
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.height.equalTo(85)
+            make.bottom.equalToSuperview()
         }
         
         personIconImageView.snp.makeConstraints { make in
@@ -404,8 +415,6 @@ extension ProfileViewController: UICollectionViewDataSource {
         
         return cell
     }
-    
-    
 }
 
 extension ProfileViewController: UICollectionViewDelegateFlowLayout {
