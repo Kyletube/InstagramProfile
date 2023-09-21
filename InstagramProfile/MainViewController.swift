@@ -47,6 +47,7 @@ class MainViewController: UIViewController {
     
     @objc func profileButtonTapped() {
         let profileViewController = ProfileViewController()
-        self.navigationController?.pushViewController(profileViewController, animated: true)
+        profileViewController.modalPresentationStyle = .fullScreen
+        self.present(profileViewController, animated: true)
     }
 }

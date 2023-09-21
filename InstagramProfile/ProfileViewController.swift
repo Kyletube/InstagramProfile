@@ -12,6 +12,26 @@ class ProfileViewController: UIViewController {
     
     let assetImageArray: [String] = ["1", "2", "3", "4", "5", "6", "7"]
 
+    let userNameLabel: UILabel = {
+        $0.text = "nabaecamp"
+        $0.font = .boldSystemFont(ofSize: 18)
+        $0.textColor = .black
+        return $0
+    }(UILabel())
+    
+    let optionButton: UIButton = {
+        let btImage = UIImage(named: "Menu")
+        $0.setImage(btImage, for: .normal)
+        return $0
+    }(UIButton())
+    
+    let backButton: UIButton = {
+        let btIcon = UIImage(systemName: "chevron.left")
+        $0.setImage(btIcon, for: .normal)
+        $0.tintColor = .black
+        return $0
+    }(UIButton())
+    
     let profileImage: UIImageView = {
         $0.image = UIImage(named: "르탄이")
         return $0
@@ -192,7 +212,8 @@ class ProfileViewController: UIViewController {
         super.viewDidLoad()
         
         setUI()
-        addNavOptionButton()
+        setConstraints()
+        setAddTarget()
     }
     
     func setUI() {
@@ -202,6 +223,9 @@ class ProfileViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        view.addSubview(userNameLabel)
+        view.addSubview(optionButton)
+        view.addSubview(backButton)
         view.addSubview(profileImage)
         view.addSubview(countInfoStackView)
         view.addSubview(userInfoStackView)
@@ -239,9 +263,27 @@ class ProfileViewController: UIViewController {
         tripleSectionStackView.addArrangedSubview(gridImageContainer)
         tripleSectionStackView.addArrangedSubview(UIView())
         tripleSectionStackView.addArrangedSubview(UIView())
+    }
+    
+    func setConstraints() {
+        
+        userNameLabel.snp.makeConstraints { make in
+            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(10)
+            make.centerX.equalTo(view.safeAreaLayoutGuide.snp.centerX)
+        }
+        
+        optionButton.snp.makeConstraints { make in
+            make.centerY.equalTo(userNameLabel.snp.centerY)
+            make.right.equalTo(view.safeAreaLayoutGuide.snp.right).offset(-16)
+        }
+        
+        backButton.snp.makeConstraints { make in
+            make.centerY.equalTo(userNameLabel.snp.centerY)
+            make.left.equalTo(view.safeAreaLayoutGuide.snp.left).offset(16)
+        }
         
         profileImage.snp.makeConstraints { make in
-            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).offset(14)
+            make.top.equalTo(userNameLabel.snp.bottom).offset(14)
             make.left.equalToSuperview().offset(14)
             make.width.equalTo(88)
             make.height.equalTo(88)
@@ -329,12 +371,14 @@ class ProfileViewController: UIViewController {
         }
     }
     
-    func addNavOptionButton() {
-        let optionButton = UIButton(type: .custom)
-        optionButton.setImage(UIImage(named: "Menu"), for: .normal)
+    func setAddTarget() {
+        backButton.addTarget(self, action: #selector(backButtonTapped), for: .touchUpInside)
         optionButton.addTarget(self, action: #selector(optionButtonTapped), for: .touchUpInside)
-        let optionBarButton = UIBarButtonItem(customView: optionButton)
-        navigationItem.rightBarButtonItem = optionBarButton
+    }
+    
+    @objc func backButtonTapped() {
+        print("백버튼 눌림")
+        dismiss(animated: true)
     }
     
     @objc func optionButtonTapped() {
