@@ -17,7 +17,7 @@
 <br><br>
 
 ## UserDefaults와 CoreData의 개념과 장단점
-- - -
+
 ### UserDefaults
 - 작은 크기의 사용자 데이터를 저장하기 위한 심플한 키-값 저장소입니다. 이는 iOS 앱의 설정 값이나 간단한 데이터를 빠르게 저장하고 읽어올 때 주로 사용됩니다.
 #### 장점
@@ -38,16 +38,19 @@
 1. 학습 곡선: API가 복잡하여 학습이 어려울 수 있습니다.
 2. 성능: 큰 데이터를 처리할 때는 최적화가 필요하며, 설정이 복잡할 수 있습니다.
 - - -
-#### UserDefaults와 CoreData의 차이점
+<br>
+
+## UserDefaults와 CoreData의 차이점
 1. 용도: UserDefaults는 간단한 데이터 저장에, CoreData는 복잡한 데이터 관리에 적합합니다.
 2. 복잡성: UserDefaults는 간단한 API를 가지고 있으나, CoreData는 많은 기능과 복잡성을 가집니다.
 3. 데이터 타입: UserDefaults는 기본적인 데이터 타입만 지원하며, CoreData는 다양한 객체와 관계를 지원합니다.
 4. 보안성: CoreData는 보안 옵션을 추가로 설정할 수 있지만, UserDefaults는 기본적으로 암호화되지 않습니다.
 - - -
+<br><br>
 ## 앱의 구조와 데이터 일관성에 대해
-- EditProfileViewController에서는 SnapKit을 사용해 UI를 코드로 구현하고 있습니다.
 - ViewModel을 통해 CoreData로부터 데이터를 읽고 쓰는 작업을 수행합니다.
 - populteUserData() 함수를 통해 초기 사용자 데이터를 화면에 표시합니다.
+<br><br>
 ### 데이터 일관성
 - saveUserData(name:age:)와 fetchUserData()함수를 통해 CoreData와의 데이터 일관성을 유지합니다.
 - viewModel.saveUserData를 호출할 때마다 CoreData가 업데이트 되므로, 앱의 다른 부분에서도 최신 데이터를 쉽게 얻을 수 있습니다.
